@@ -20,7 +20,7 @@ namespace CnBetaProject.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value1";
+            return "value";
         }
 
         // POST api/values
