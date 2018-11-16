@@ -14,16 +14,19 @@ namespace CnBetaProject
     {
         public static void Main(string[] args)
         {
+          
+
             BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseKestrel(options=> 
+                .UseKestrel(options =>
                 {
                     options.Limits.MaxConcurrentConnections = 100;
                 })
+                .UseUrls("http://*:5123")
                 .Build();
     }
 }
